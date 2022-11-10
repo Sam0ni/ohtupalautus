@@ -1,12 +1,12 @@
 from kauppa import Kauppa
-from kirjanpito import Kirjanpito
+from kirjanpito import kirjanpito
 from varasto import Varasto
 from pankki import Pankki
 from viitegeneraattori import Viitegeneraattori
 
 
 def main():
-    kirjanpito = Kirjanpito()
+    realkirjanpito = kirjanpito
     kauppa = Kauppa()
 
 
@@ -27,7 +27,7 @@ def main():
     kauppa.tilimaksu("Arto Vihavainen", "3425-1652")
 
     # kirjanpito
-    for tapahtuma in kirjanpito.tapahtumat:
+    for tapahtuma in realkirjanpito.tapahtumat:
         print(tapahtuma)
 
 
