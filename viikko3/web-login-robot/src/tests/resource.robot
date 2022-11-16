@@ -9,6 +9,7 @@ ${DELAY}  0 seconds
 ${HOME URL}  http://${SERVER}
 ${LOGIN URL}  http://${SERVER}/login
 ${REGISTER URL}  http://${SERVER}/register
+${MAIN URL}  http://${SERVER}/ohtu
 
 *** Keywords ***
 Open And Configure Browser
@@ -36,3 +37,6 @@ Register Page Should Be Open
 
 Go To Main Page
     Go To  ${HOME URL}
+
+Go To Main
+    Go To  ${MAIN URL}
