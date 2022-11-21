@@ -20,6 +20,12 @@ class Ostoskori:
     def lisaa_tuote(self, lisattava: Tuote):
         # lisää tuotteen
         ostos = Ostos(lisattava)
+        for tuotteet in self.kori:
+            if tuotteet.tuotteen_nimi() == lisattava.nimi():
+                tuotteet.muuta_lukumaaraa(1)
+                self.tavaroiden_maara += 1
+                self.korin_hinta += lisattava.hinta()
+                return
         self.kori.append(ostos)
         self.tavaroiden_maara += 1
         self.korin_hinta += lisattava.hinta()
